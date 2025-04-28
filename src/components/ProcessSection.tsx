@@ -10,7 +10,7 @@ const steps = [
   {
     number: '02',
     title: 'Name Availability Check',
-    description: 'We'll check if your proposed company name is available and compliant with regulations.'
+    description: 'We\'ll check if your proposed company name is available and compliant with regulations.'
   },
   {
     number: '03',
