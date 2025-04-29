@@ -40,11 +40,11 @@ const ScrollButton = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
-          className="fixed bottom-8 right-8 z-50"
+          className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50"
         >
           <Button 
             onClick={scrollToForm}
-            className="bg-yellow-300 hover:bg-yellow-400 text-black rounded-full p-4 shadow-lg"
+            className="bg-yellow-300 hover:bg-yellow-400 text-black rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300"
           >
             <span className="sr-only">Get in touch</span>
             <ArrowUp className="w-5 h-5" />
