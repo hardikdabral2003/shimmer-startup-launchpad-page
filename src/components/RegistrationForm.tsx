@@ -2,91 +2,152 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import { motion } from 'framer-motion';
+import { Mail, Phone, MapPin } from 'lucide-react';
 
 const RegistrationForm = () => {
   return (
-    <section id="registration-form" className="py-16 px-6 md:px-12 lg:px-24 bg-white">
-      <motion.div 
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-        className="container-tight"
-      >
-        <div className="text-center mb-12">
-          <h2 className="heading-lg mb-4">Start Your Registration Process</h2>
-          <p className="subheading max-w-3xl mx-auto">
-            Fill out the form below to begin your company registration journey with us.
-          </p>
-        </div>
-
-        <div className="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg">
-          <form className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-company-darkgray mb-1">
-                  Company Name
-                </label>
-                <Input 
-                  id="name" 
-                  type="text" 
-                  placeholder="Enter your proposed company name" 
-                  className="w-full"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-company-darkgray mb-1">
-                  Email Address
-                </label>
-                <Input 
-                  id="email" 
-                  type="email" 
-                  placeholder="Enter your email address" 
-                  className="w-full"
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-company-darkgray mb-1">
-                  Phone Number
-                </label>
-                <Input 
-                  id="phone" 
-                  type="tel" 
-                  placeholder="Enter your phone number" 
-                  className="w-full"
-                />
-              </div>
-              <div>
-                <label htmlFor="location" className="block text-sm font-medium text-company-darkgray mb-1">
-                  Business Location
-                </label>
-                <Input 
-                  id="location" 
-                  type="text" 
-                  placeholder="City where you'll register" 
-                  className="w-full"
-                />
-              </div>
-            </div>
+    <section id="registration-form" className="py-24 px-6 md:px-12 lg:px-24 bg-white">
+      <div className="container-tight">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16"
+        >
+          {/* Left Column - Text Content */}
+          <div className="space-y-10">
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-company-darkgray mb-1">
-                Additional Requirements (Optional)
-              </label>
-              <textarea
-                id="message"
-                rows={3}
-                className="w-full rounded-md border border-input bg-background px-3 py-2 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                placeholder="Any specific requirements or questions?"
-              />
+              <h2 className="text-7xl font-bold tracking-tight text-company-blue mb-6">
+                Let's get<br />in touch
+              </h2>
+              <p className="text-xl text-company-darkgray mb-6">
+                Don't be afraid to say hello with us!
+              </p>
             </div>
-            <Button className="btn-primary w-full">Submit Registration Request</Button>
-            <p className="text-xs text-center text-gray-500 mt-2">
-              By submitting, you agree to our Terms & Privacy Policy
-            </p>
-          </form>
-        </div>
-      </motion.div>
+            
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-gray-500 mb-2">Phone</h3>
+                <div className="flex items-center">
+                  <Phone size={18} className="mr-2 text-company-lightblue" />
+                  <a href="tel:+123456789" className="text-company-blue text-lg hover:text-company-lightblue transition-colors">
+                    +1 (234) 567-890
+                  </a>
+                </div>
+              </div>
+              
+              <div>
+                <h3 className="text-gray-500 mb-2">Email</h3>
+                <div className="flex items-center">
+                  <Mail size={18} className="mr-2 text-company-lightblue" />
+                  <a href="mailto:contact@companyregistration.com" className="text-company-blue text-lg hover:text-company-lightblue transition-colors">
+                    contact@companyregistration.com
+                  </a>
+                </div>
+              </div>
+              
+              <div>
+                <h3 className="text-gray-500 mb-2">Office</h3>
+                <div className="flex items-start">
+                  <MapPin size={18} className="mr-2 mt-1 text-company-lightblue" />
+                  <div>
+                    <p className="text-company-blue text-lg">
+                      123 Business Avenue, Suite 200<br />
+                      New York, NY 10001
+                    </p>
+                    <a 
+                      href="https://maps.google.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-company-lightblue hover:underline inline-flex items-center mt-2"
+                    >
+                      See on Google Map
+                      <svg className="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Right Column - Contact Form */}
+          <div className="bg-company-blue text-white p-8 rounded-lg">
+            <h3 className="text-2xl font-semibold mb-6">Contact</h3>
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="name" className="sr-only">
+                    Name
+                  </label>
+                  <Input 
+                    id="name" 
+                    type="text" 
+                    placeholder="Name" 
+                    className="bg-transparent border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 text-white placeholder:text-gray-400 focus-visible:ring-0"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="sr-only">
+                    Email
+                  </label>
+                  <Input 
+                    id="email" 
+                    type="email" 
+                    placeholder="Email" 
+                    className="bg-transparent border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 text-white placeholder:text-gray-400 focus-visible:ring-0"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="sr-only">
+                    Phone
+                  </label>
+                  <Input 
+                    id="phone" 
+                    type="tel" 
+                    placeholder="Phone" 
+                    className="bg-transparent border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 text-white placeholder:text-gray-400 focus-visible:ring-0"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="subject" className="sr-only">
+                    Subject
+                  </label>
+                  <Input 
+                    id="subject" 
+                    type="text" 
+                    placeholder="Subject" 
+                    className="bg-transparent border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 text-white placeholder:text-gray-400 focus-visible:ring-0"
+                  />
+                </div>
+              </div>
+              
+              <div>
+                <label htmlFor="message" className="sr-only">
+                  Tell us about your requirements
+                </label>
+                <Textarea
+                  id="message"
+                  rows={4}
+                  placeholder="Tell us about your interested in"
+                  className="bg-transparent border-b border-t-0 border-l-0 border-r-0 rounded-none px-0 resize-none text-white placeholder:text-gray-400 focus-visible:ring-0"
+                />
+              </div>
+              
+              <Button 
+                type="submit" 
+                className="w-full bg-yellow-300 hover:bg-yellow-400 text-black font-medium py-3 text-lg"
+              >
+                Send to us
+              </Button>
+            </form>
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 };

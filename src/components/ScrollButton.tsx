@@ -44,9 +44,9 @@ const ScrollButton = () => {
         >
           <Button 
             onClick={scrollToForm}
-            className="bg-company-lightblue hover:bg-blue-600 text-white rounded-full p-4 shadow-lg"
+            className="bg-yellow-300 hover:bg-yellow-400 text-black rounded-full p-4 shadow-lg"
           >
-            <span className="sr-only">Scroll to registration form</span>
+            <span className="sr-only">Get in touch</span>
             <ArrowUp className="w-5 h-5" />
           </Button>
         </motion.div>
