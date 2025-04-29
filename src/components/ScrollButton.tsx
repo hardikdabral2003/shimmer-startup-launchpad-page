@@ -45,8 +45,8 @@ const ScrollButton = () => {
           <Button 
             onClick={scrollToForm}
             className="bg-yellow-300 hover:bg-yellow-400 text-black rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-300"
+            aria-label="Get in touch"
           >
-            <span className="sr-only">Get in touch</span>
             <ArrowUp className="w-5 h-5" />
           </Button>
         </motion.div>
